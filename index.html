@@ -67,12 +67,7 @@
             <div class="btn-menu-nav">
             <a href="#home" data-transition="slideup"><div class="img-btn btn-popular-a"></div></a>
             </div>
-            <div class="btn-menu-nav">
-            <a href="#favorito" data-transition="slideup"><div class="img-btn btn-favorite-o"></div></a>
-            </div>
-            <a href="#preferencias" data-transition="slideup"><div class="btn-menu-nav">
-            <div class="img-btn btn-preferencias-o"></div></a>
-            </div>
+            
             </div>
         
         
@@ -101,12 +96,6 @@
             <div class="btn-menu-nav">
             <a href="#home" data-transition="slideup"><div class="img-btn btn-popular-a"></div></a>
             </div>
-            <div class="btn-menu-nav">
-            <a href="#favorito" data-transition="slideup"><div class="img-btn btn-favorite-o"></div></a>
-            </div>
-            <a href="#preferencias" data-transition="slideup"><div class="btn-menu-nav">
-            <div class="img-btn btn-preferencias-o"></div></a>
-            </div>
             </div>
         
         
@@ -126,19 +115,13 @@
         
             <!--- HEADER !-->
             <div data-role="header" class="none topbar">
-            <h1 id="titulo">TITULO DEL EVENTO</h1>
+            <h1 id="titulo"></h1>
             </div>
                 
             <!--- MENU NAVEGACION !-->
             <div class="menu-nav">
             <div class="btn-menu-nav">
             <a href="#home" data-transition="slideup"><div class="img-btn btn-popular-a"></div></a>
-            </div>
-            <div class="btn-menu-nav">
-            <a href="#favorito" data-transition="slideup"><div class="img-btn btn-favorite-o"></div></a>
-            </div>
-            <a href="#preferencias" data-transition="slideup"><div class="btn-menu-nav">
-            <div class="img-btn btn-preferencias-o"></div></a>
             </div>
             </div>
         
@@ -250,6 +233,7 @@ $("#eventos").on("pageshow", function(){
         for(var i=0; i< elementosE - 1 ; i++){
              $('.ul-eventos').append(
              '<li class="evento">' +
+             '<img src=http://banighttours.com/' + data["eventos"][i].imagenevento + '>' +
              '<a href="javascript:traaerunevento(' + data["eventos"][i].idevento + ');">' +
              '<h3 class="fecha">' + data["eventos"][i].fecha + '</h3>' +   
              //'<img src="http://banighttours.com/APP/img' + data["eventos"][i].imagen + '"/>' +
@@ -272,10 +256,14 @@ $("#unevento").on("pageshow", function(){
         $('.ul-unevento li').remove();
         $('.ul-unevento').append(
         '<li class="unevento">' +
-        '<a href="javascript:openArticle(' + data["unsoloevento"].idevento + ');">' +
-        '<p class="fecha">' + data["unsoloevento"].fecha + '</p>' +   
-        //'<img src="http://banighttours.com/APP/img' + data["unsoloevento"].imagen + '"/>' +
         '<h1>' + data["unsoloevento"].nombreevento + '</h1>' +
+        '<a href="javascript:openArticle(' + data["unsoloevento"].idevento + ');">' +
+        '<p class="fecha">Fecha: ' + data["unsoloevento"].fecha + '</p>' +  
+        '<p class="fecha">Desde las ' + data["unsoloevento"].horadesde + '</p>' +
+        '<p class="fecha">hasta las' + data["unsoloevento"].horahasta + '</p>' +  
+        '<p class="distancia">Distancia hasta la locación del evento: 13.5 KM </p>' +     
+        //'<img src="http://banighttours.com/APP/img' + data["unsoloevento"].imagen + '"/>' +
+        
         '</span></a></li>');
      });
 });

@@ -1,6 +1,7 @@
 body{
 
     background-color: #000;
+    font-family: Helvetica;
 
 }
 
@@ -27,10 +28,9 @@ text-shadow:none
 /******------------ LOGIN ------------******/
 
 #logo{
-    width:60%;
-    height:auto;
-    margin: 0 20%;
     margin-top: 80px;
+    display: block;
+    margin: 34px auto;
 }
 
 #fondo-login{
@@ -886,19 +886,30 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
 
 .rutali{
 
-    background-image: url('../img/rutaback.png');
-    width: 300px;
+   
+    width: 70%;
     height: 50px;
-    padding: 10px 20px;
     margin-bottom: 30px;
-    color: #fff;
+    background-color: #fff600;
     font-size: 30px;
     list-style: none;
+
+
+    border: none;
+    border-radius: 5px;
+    padding: 7px 20px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 8px 0!important;
+    color: #555;
+    margin-bottom: 14px;
 }
 
 .rutali a{
     text-decoration: none;
-    color: #fff;
+    color: #555;
+    font-size: 20px;
     }
 
 
@@ -909,9 +920,10 @@ input[type="checkbox"].green.ios-switch:checked + div > div {
     max-width:300px;
     padding: 20px 10px;
     color: #fff;
-    margin: 15px;
+    margin: 15px auto;
     font-size: 30px;
     list-style: none;
+    text-align: center;
 }
 
 .evento a{
@@ -928,12 +940,13 @@ h3,h2{
     display:block;
     border: 1px solid #fff;
     background-color: #212121;
-    max-width:300px;
+
     padding: 20px 10px;
     color: #fff;
-    margin: 15px;
+    margin: 15px auto;
     font-size: 30px;
     list-style: none;
+    text-align: center;
 }
 
 .unevento a{
@@ -943,3 +956,6 @@ h3,h2{
 
 
 
+.ul-rutas{
+    margin: 10px 20px 10px 20px;
+}
