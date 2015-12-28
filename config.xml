@@ -24,7 +24,7 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
 
-
+    <!--<gap:plugin name="org.apache.cordova.device-orientation" version="0.3.9" />-->
     <icon src="icon.png" />
 	<icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/ldpi/ic_launcher.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="res/icon/android/mdpi/ic_launcher.png" />
