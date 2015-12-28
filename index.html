@@ -21,14 +21,6 @@
     
 <script>
     document.addEventListener("deviceready", function() {
-  // Define a div tag with id="map_canvas"
-  var mapDiv = document.getElementById("map_canvas");
-
-  // Initialize the map plugin
-  var map = plugin.google.maps.Map.getMap(mapDiv);
-
-  // You have to wait the MAP_READY event.
-  map.on(plugin.google.maps.event.MAP_READY, onMapInit);
 });
 
 </script>
@@ -51,9 +43,8 @@
             <!--- CONTENIDO !-->
             <div data-role="content">	
             <form id="formulario" >
-            <input type="text" id="nombredeusuario" name="nombredeusuario" placeholder="Nombre de usuario">
-            <input type="password" id="clave" name="clave" placeholder="Contraseña">
-            <input type="submit" value="Login V1.0">
+            <p>Bienvenidos a BANT, ingresá para conocer las mejores rutas!</p>
+            <input type="submit" value="Acepto los términos y condiciones">
             
             </form>	
             </div>
@@ -121,9 +112,6 @@
         
             <!--- CONTENIDO !-->
             <div data-role="content" class="secciones"> 
-            <div id="map_canvas">
-                Couldn't load map because there was no internet connection available
-            </div>
             <ul class="ul-eventos"> 
             </ul>   
 
@@ -201,8 +189,8 @@
 
 $('#formulario').submit(function() {
 	// recolecta los valores que inserto el usuario
-	var datosUsuario = $("#nombredeusuario").val()
-	var datosPassword = $("#clave").val()
+	var datosUsuario = "lean"
+	var datosPassword = "123"
 
     var homeLoaded = false;
     var favoritesLoaded = false;
@@ -270,9 +258,6 @@ $("#eventos").on("pageshow", function(){
         }
     });
 
-         //Aca se deberia iniciazilar el mapa!
-  //  var map = new GoogleMap();
-  //  map.initialize();
 });    
 
 //----------------------------------- PEDIR UN EVENTO ----------------------- REVISAR LA FORMA DE MOSTRARLO MOSTRAR MAPA DE GOOGLE CON PUNTO UBICACION Y CENTRADO.
@@ -294,13 +279,6 @@ $("#unevento").on("pageshow", function(){
         '</span></a></li>');
      });
 });
-
-
-//----------------------------------- MAPAS -----------------------
-    
-function onMapInit(map) {
-    alert("casi habemus mapa");
-}
 
 
 

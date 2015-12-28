@@ -1,6 +1,6 @@
 body{
 
-  /*  background-color: #000; */
+    background-color: #000;
 
 }
 
@@ -941,9 +941,5 @@ h3,h2{
     color: #fff;
     }
 
-#map_canvas{
-    height: 400px!important;
-
-}
 
 
