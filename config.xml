@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.bant" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Buenos Aires Night Tour</name>
+    <description>
+        Visualiza todas tus rutas preferidas de Buenos Aires Night Tours!
+    </description>
+    <author email="leanamaro@gmail.com" href="http://buenosairesnighttours.com/">
+       Lean Amaro.
+    </author>
+    <preference name="permissions" value="none" />
+    <preference name="phonegap-version" value="3.7.0" />
+    <preference name="orientation" value="default" />
+    <preference name="target-device" value="universal" />
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="7" />
+    <preference name="android-installLocation" value="auto" />
+
+    <!--<gap:plugin name="org.apache.cordova.device-orientation" version="0.3.9" />-->
+    <gap:plugin name="plugin.google.maps.menusito" version="1.2.5" />
+
+      <gap:plugin name="plugin.google.maps" source="plugins.cordova.io" version="~1.2.4">
+    <param name="API_KEY_FOR_ANDROID" value="xyz" />
+    <param name="API_KEY_FOR_IOS" value="123" />
+  </gap:plugin>
+    <icon src="icon.png" />
+	<icon gap:platform="android" gap:qualifier="ldpi" src="res/icon/android/ldpi/ic_launcher.png" />
+    <icon gap:platform="android" gap:qualifier="mdpi" src="res/icon/android/mdpi/ic_launcher.png" />
+    <icon gap:platform="android" gap:qualifier="hdpi" src="res/icon/android/hdpi/ic_launcher.png" />
+    <icon gap:platform="android" gap:qualifier="xhdpi" src="res/icon/android/xhdpi/ic_launcher.png" />
+	<icon gap:platform="android" gap:qualifier="xxhdpi" src="res/icon/android/xxhdpi/ic_launcher.png" />
+	<icon gap:platform="android" gap:qualifier="xxxhdpi" src="res/icon/android/xxxhdpi/ic_launcher.png" />
+
+    <gap:splash src="splash.png" />
+    <gap:splash src="res/screen/android/ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
+    <gap:splash src="res/screen/android/mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
+    <gap:splash src="res/screen/android/hdpi.png" gap:platform="android" gap:qualifier="hdpi" />
+    <gap:splash src="res/screen/android/xhdpi.png" gap:platform="android" gap:qualifier="xhdpi" />
+	
+    <access origin="*" />
+</widget>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buenos Aires Night Tours</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" charset="utf-8" />
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+
+    <!--  INCLUDES DE GOOGLE MAPS -->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css"rel="stylesheet"type="text/css" />
+    <script type="text/javascript" src="js/googlemap.js"></script>
+    <script type="text/javascript" src="js/reachability.js"></script>
+    
+<script>
+    document.addEventListener("deviceready", function() {
+  // Define a div tag with id="map_canvas"
+  var mapDiv = document.getElementById("map_canvas");
+
+  // Initialize the map plugin
+  var map = plugin.google.maps.Map.getMap(mapDiv);
+
+  // You have to wait the MAP_READY event.
+  map.on(plugin.google.maps.event.MAP_READY, onMapInit);
+});
+
+</script>
+    
+</head>
+
+<body>
+    
+    <!------------    LOGIN    !------------>
+	<div data-role="page" id="inicio">
+	    
+            <div id="fondo-login">
+
+            <!--- HEADER !-->
+            <div data-role="header" class="none">
+            <img id="logo" src="img/logo.png">
+            </div>
+
+
+            <!--- CONTENIDO !-->
+            <div data-role="content">	
+            <form id="formulario" >
+            <input type="text" id="nombredeusuario" name="nombredeusuario" placeholder="Nombre de usuario">
+            <input type="password" id="clave" name="clave" placeholder="Contraseña">
+            <input type="submit" value="Login V1.0">
+            
+            </form>	
+            </div>
+            </div>
+        
+	</div>
+
+    
+    <!------------    RUTAS -----------------------------------------------------   !------------>
+	<div data-role="page" id="home" class="page">
+	           
+        
+            <!--- HEADER !-->
+            <div data-role="header" class="none topbar">
+            <h1 id="titulo">Mis Rutas</h1>
+            </div>
+                
+            <!--- MENU NAVEGACION !-->
+            <div class="menu-nav">
+            <div class="btn-menu-nav">
+            <a href="#home" data-transition="slideup"><div class="img-btn btn-popular-a"></div></a>
+            </div>
+            <div class="btn-menu-nav">
+            <a href="#favorito" data-transition="slideup"><div class="img-btn btn-favorite-o"></div></a>
+            </div>
+            <a href="#preferencias" data-transition="slideup"><div class="btn-menu-nav">
+            <div class="img-btn btn-preferencias-o"></div></a>
+            </div>
+            </div>
+        
+        
+            <!--- CONTENIDO !-->
+		    <div data-role="content" class="secciones">	
+             
+            <ul class="ul-rutas"> 
+            </ul>   
+
+		    </div>
+ 
+	</div>
+
+
+    <!------------    EVENTOS -------------------------------------------------------------------------------------------------   !------------>
+    <div data-role="page" id="eventos" class="page">
+               
+        
+            <!--- HEADER !-->
+            <div data-role="header" class="none topbar">
+            <h1 id="titulo">Eventos</h1>
+            </div>
+                
+            <!--- MENU NAVEGACION !-->
+            <div class="menu-nav">
+            <div class="btn-menu-nav">
+            <a href="#home" data-transition="slideup"><div class="img-btn btn-popular-a"></div></a>
+            </div>
+            <div class="btn-menu-nav">
+            <a href="#favorito" data-transition="slideup"><div class="img-btn btn-favorite-o"></div></a>
+            </div>
+            <a href="#preferencias" data-transition="slideup"><div class="btn-menu-nav">
+            <div class="img-btn btn-preferencias-o"></div></a>
+            </div>
+            </div>
+        
+        
+            <!--- CONTENIDO !-->
+            <div data-role="content" class="secciones"> 
+            <div id="map_canvas">
+                Couldn't load map because there was no internet connection available
+            </div>
+            <ul class="ul-eventos"> 
+            </ul>   
+
+            </div>
+ 
+    </div>
+
+<!------------    UN EVENTO -------------------------------------------------------------------------------------------------   !------------>
+
+        <div data-role="page" id="unevento" class="page">
+               
+        
+            <!--- HEADER !-->
+            <div data-role="header" class="none topbar">
+            <h1 id="titulo">TITULO DEL EVENTO</h1>
+            </div>
+                
+            <!--- MENU NAVEGACION !-->
+            <div class="menu-nav">
+            <div class="btn-menu-nav">
+            <a href="#home" data-transition="slideup"><div class="img-btn btn-popular-a"></div></a>
+            </div>
+            <div class="btn-menu-nav">
+            <a href="#favorito" data-transition="slideup"><div class="img-btn btn-favorite-o"></div></a>
+            </div>
+            <a href="#preferencias" data-transition="slideup"><div class="btn-menu-nav">
+            <div class="img-btn btn-preferencias-o"></div></a>
+            </div>
+            </div>
+        
+        
+            <!--- CONTENIDO !-->
+            <div data-role="content" class="secciones"> 
+            <ul class="ul-unevento"> 
+            </ul>   
+
+            </div>
+ 
+    </div>
+
+    <!------------    DESCUENTOS TRAER DESCUENTOS DE LOS EVENTOS A LOS QUE PERTENECE EL USUARIO    !------------>
+	<div data-role="page" id="favorito" class="page">
+	           
+        
+            <!--- HEADER !-->
+            <div data-role="header" class="none topbar">
+            <h1 id="titulo">Favoritos</h1>
+            </div>
+		 
+            <!--- MENU NAVEGACION !-->
+            <div class="menu-nav">
+            <div class="btn-menu-nav">
+            <a href="#home" data-transition="slideup"><div class="img-btn btn-popular-o"></div></a>
+            </div>
+            <div class="btn-menu-nav">
+            <a href="#favorito" data-transition="slideup"><div class="img-btn btn-favorite-a"></div></a>
+            </div>
+            <a href="#preferencias" data-transition="slideup"><div class="btn-menu-nav">
+            <div class="img-btn btn-preferencias-o"></div></a>
+            </div>
+            </div>
+        
+        
+            <!--- CONTENIDO !-->
+		    <div data-role="content" class="secciones">	
+		    <ul id="articulos-favoritos"></ul>
+		    </div>
+ 
+	</div>
+    
+
+<script>
+    var idev = 0;
+
+
+$('#formulario').submit(function() {
+	// recolecta los valores que inserto el usuario
+	var datosUsuario = $("#nombredeusuario").val()
+	var datosPassword = $("#clave").val()
+
+    var homeLoaded = false;
+    var favoritesLoaded = false;
+	archivoValidacion = "http://banighttours.com/APP/services/validacionReal.php?jsoncallback=?" 
+	 
+	$.getJSON( archivoValidacion, { usuario:datosUsuario ,password:datosPassword}) 
+	.done(function(respuestaServer) {
+        idUsuario = respuestaServer.usuario;
+
+		if(respuestaServer.validacion == "ok"){        
+			$.mobile.changePage("#home");
+                $("#home").on("pageshow", function(){
+                var cantEventos = Object.keys(respuestaServer["rutas"]).length;
+                $('.ul-rutas li').remove();
+                for(var i=0; i< cantEventos ; i++){   
+                    $('.ul-rutas').append(
+                    '<li class="rutali">' +
+                    '<a id="'+ respuestaServer["rutas"][i].idruta +'" href="javascript:traerEventos('+ respuestaServer["rutas"][i].idruta + ');">'+respuestaServer["rutas"][i].nombre+'</a>' +
+                    '</li>'
+                    ); 
+                }  
+	       });
+            /* Esto guarda en el localstorage */
+            var datosLocales = JSON.stringify(respuestaServer);
+            localStorage.setItem("datos", datosLocales);
+        
+            if(navigator.offline){
+                //alert("No hay señal");
+            }else{
+                //alert("Si hay señal");   
+            }
+            var datosGuardados = localStorage.getItem("datos");
+            var datosObjeto = JSON.parse(datosGuardados);        
+    	}else{
+    	    alert("no");
+    	}
+    })
+	return false;
+})
+ 
+//----------------------------------- PEDIR EVENTOS -----------------------
+
+function traerEventos(id){
+     $.mobile.changePage("#eventos");
+     idev = id;
+
+
+
+
+}
+
+$("#eventos").on("pageshow", function(){
+
+    $.getJSON('http://banighttours.com/APP/services/eventosruta2.php?id='+idev, function(data) {
+        $('.ul-eventos li').remove();
+        var elementosE = Object.keys(data["eventos"]).length;
+        for(var i=0; i< elementosE - 1 ; i++){
+             $('.ul-eventos').append(
+             '<li class="evento">' +
+             '<a href="javascript:traaerunevento(' + data["eventos"][i].idevento + ');">' +
+             '<h3 class="fecha">' + data["eventos"][i].fecha + '</h3>' +   
+             //'<img src="http://banighttours.com/APP/img' + data["eventos"][i].imagen + '"/>' +
+             '<h2>' + data["eventos"][i].nombreevento + '</h2>' +
+             '</span></a></li>');
+        }
+    });
+
+         //Aca se deberia iniciazilar el mapa!
+  //  var map = new GoogleMap();
+  //  map.initialize();
+});    
+
+//----------------------------------- PEDIR UN EVENTO ----------------------- REVISAR LA FORMA DE MOSTRARLO MOSTRAR MAPA DE GOOGLE CON PUNTO UBICACION Y CENTRADO.
+
+function traaerunevento(id){
+     $.mobile.changePage("#unevento");
+     idev = id;
+}
+
+$("#unevento").on("pageshow", function(){
+    $.getJSON('http://banighttours.com/APP/services/evento.php?id='+idev, function(data) {
+        $('.ul-unevento li').remove();
+        $('.ul-unevento').append(
+        '<li class="unevento">' +
+        '<a href="javascript:openArticle(' + data["unsoloevento"].idevento + ');">' +
+        '<p class="fecha">' + data["unsoloevento"].fecha + '</p>' +   
+        //'<img src="http://banighttours.com/APP/img' + data["unsoloevento"].imagen + '"/>' +
+        '<h1>' + data["unsoloevento"].nombreevento + '</h1>' +
+        '</span></a></li>');
+     });
+});
+
+
+//----------------------------------- MAPAS -----------------------
+    
+function onMapInit(map) {
+    alert("casi habemus mapa");
+}
+
+
+
+
+</script>
+    <script src="cordova.js"></script>
+</body>
+</html>
